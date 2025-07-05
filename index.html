@@ -1,32 +1,73 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <title>หน้าข้อความตัวอย่าง</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f9f9f9;
-        }
-
-        h1 {
-            color: #333366;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #444444;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>แกลเลอรีภาพนักเรียน</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f0f8ff;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+    .image-card {
+      background: #ffffff;
+      margin: 20px auto;
+      padding: 15px;
+      border: 2px solid #007acc;
+      border-radius: 12px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    .image-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .note {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <h1>???</h1>
-    <p>
-📚 3. การศึกษา วิทยาศาสตร์ และปรัชญา
-	•	แนวคิดแบบวิทยาศาสตร์ตะวันตกเน้นการใช้เหตุผล การทดลอง และการพิสูจน์ ซึ่งเป็นรากฐานของ ความก้าวหน้าทางวิทยาศาสตร์และเทคโนโลยี
-	•	ระบบการศึกษาตะวันตก โดยเฉพาะในยุคเรืองปัญญา (Age of Enlightenment) สร้างแนวคิดใหม่ที่กระตุ้นให้โลกเปลี่ยนผ่านสู่ยุคสมัยใหม่
-    </p>
+
+  <h1>แกลเลอรีภาพ</h1>
+
+  <div id="gallery"></div>
+
+  <p class="note">ค่ตเท่</p>
+
+  <script>
+    const images = [
+      ''
+    ];
+
+    const gallery = document.getElementById('gallery');
+
+    images.forEach(url => {
+      const card = document.createElement('div');
+      card.className = 'image-card';
+
+      const image = document.createElement('img');
+      image.src = url;
+      image.alt = 'student image';
+
+      card.appendChild(image);
+      gallery.appendChild(card);
+    });
+  </script>
 </body>
 </html>
